@@ -1,5 +1,9 @@
 <?php
     require "conexion.php";
+    $id = 0;
+    $pelicula;
+    $result;
+    $query;
 ?>
 
 <!DOCTYPE html>
@@ -18,16 +22,16 @@
 
 <body>
 
-  <ul id="dropdown-menu" class="dropdown-content">
-    <li><a href="#!">Iniciar Sesion</a></li>
-    <li><a href="#!">Registrase</a></li>
-  </ul>
-
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo center">CRUDa</a>
       <ul class="left hide-on-med-and-down">
         <li><a href="#">Catalogo</a></li>
         <li><a href="#">Genero</a></li>
+      </ul>
+
+      <ul id="dropdown-menu" class="dropdown-content">
+        <li><a href="#!">Iniciar Sesion</a></li>
+        <li><a href="#!">Registrase</a></li>
       </ul>
 
       <ul class="right hide-on-med-and-down">
@@ -46,27 +50,28 @@
     </div>
   </nav>
 
+  <?php
+    $query = "SELECT * FROM peliculas WHERE id = '$id'";
+    $result = $conexion -> query($query);
+    $pelicula = $result -> fetch_assoc();
+  ?>
+
   <div class="parallax-container">
-    <div class="parallax"><img src="assets/images/Bad-Boys.jpg"></div>
+    <div class="parallax"><img src="assets/images/<?php echo $pelicula['titulo'];?>.jpg"></div>
     <article>
       <header align="center">
-        <h2>Bad Boys for Life</h2>
+        <h2><?php echo $pelicula['titulo'];?></h2>
       </header>
       <div>
         <table>
           <tr>
             <th>
               <figure>
-                <img width="200" height="300" src="assets/images/Bad-Boys-poster.jpg">
+                <img width="200" height="300" src="assets/images/<?php echo $pelicula['titulo'];?>-poster.jpg">
               </figure>
             </th>
             <th>
-              <p>Pasaron 17 años para poder ver nuevamente a Marcus Burnett y Mike Lowery en acción.
-                Luego del éxito de las dos primeras entregas, esta tercera parte llamada Bad Boys For life emociona a
-                todos.
-                Marcus Burnett es ahora un inspector de policía, Mike lowery está en una crisis, pero el destino los
-                junta
-                nuevamente.</p>
+              <p><?php echo $pelicula['resumen'];?></p>
             </th>
           </tr>
         </table>
@@ -75,105 +80,42 @@
   </div>
 
   <div class="carousel">
-    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
-    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
-    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>
-    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>
-    <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>
+    <?php for ($id = 0;$id <= 5; $id++):?>
+    <?php   $query = "SELECT * FROM peliculas WHERE id = '$id'";
+            $result = $conexion -> query($query);
+            $pelicula = $result -> fetch_assoc();?>
+            <a class="carousel-item" href="<?echo $id;?>"><img src="assets/images/<?php echo $pelicula['titulo'];?>-poster.jpg"></a>
+    <?php endfor?>
   </div>
+
+  <?php
+    $query = "SELECT * FROM peliculas";
+    $result = $conexion -> query($query);
+    $peliculas = array();
+    while ($pelicula = $result -> fetch_assoc()) {
+        $peliculas[] = $pelicula;
+    } 
+  ?>
 
   <div>
     <table>
       <th>
         <table>
-          <tr height="25%">
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-          </tr>
-          <tr height="25%">
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-          </tr>
-          <tr height="25%">
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-          </tr>
-          <tr height="25%">
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-            <th width="25%">
-              <figure>
-                <img src="assets/images/Bad-Boys-poster.jpg">
-              </figure>
-            </th>
-          </tr>
+          <?php $i = 0; while ($i < sizeof($peliculas)):?>
+            <tr height="25%">
+              <?php for ($v = 0;$v <= 4; $v++):?>
+                <?php if ($i < sizeof($peliculas)):?>
+                  <th width="25%">
+                    <figure>
+                      <?php $pelicula = $peliculas[$i];?>
+                      <img src="assets/images/<?php echo  $pelicula['titulo'];?>-poster.jpg">
+                      <?php $i++;?>
+                    </figure>
+                  </th>
+                <?php endif?>
+              <?php endfor?>
+            </tr>
+          <?php endwhile?>
         </table>
       </th>
 

@@ -24,9 +24,19 @@ CREATE TABLE `peliculas` (
   `director` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `duracion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `idioma` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `protagonistas` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `fecha_estreno` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `resumen` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
+  `fecha_estreno` date NOT NULL,
+  `id` int UNSIGNED NOT NULL PRIMARY KEY auto_increment
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+INSERT INTO `peliculas` (`titulo`, `categoria`, `director`, `duracion`, `idioma`, `resumen`, `fecha_estreno`, `id`)
+VALUES
+('Bad Boys for Life', 'Accion', 'Adil El Arbi y Bilall Fallah', '2 h 4 min', 'Ingles', 
+'Pasaron 17 años para poder ver nuevamente a Marcus Burnett y Mike Lowery en acción. Luego del éxito de las dos primeras entregas, esta tercera parte llamada Bad Boys For life emociona a todos. Marcus Burnett es ahora un inspector de policía, Mike lowery está en una crisis, pero el destino los junta nuevamente.',
+'2020-01-17', 0),
+('Bloodshot', 'Accion', 'Dave Wilson', '1 h 49 min', 'Ingles', 
+'Ray Garrison (Vin Diesel), también conocido como Bloodshot, es resucitado por la compañía Rising Spirit Technologies a través del uso de nanotecnología. Mientras lucha por recuperar la memoria, Ray trata de volver al ser el que era antes de sufrir el accidente que dejaría amnésico. Película basada en el cómic "Valiant", creado por Kevin VanHook, Don Perlin y Bob Layton.',
+'2020-03-13', 1);
 
 --
 -- Create table structure for table `miembros`
@@ -39,5 +49,6 @@ CREATE TABLE `miembros` (
   `correo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `alias` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
   `contraseña` text CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL,
-  `permiso` int NOT NULL DEFAULT '1'
+  `permiso` int NOT NULL DEFAULT '1',
+  `id` int UNSIGNED NOT NULL PRIMARY KEY auto_increment
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
