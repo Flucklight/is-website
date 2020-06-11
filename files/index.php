@@ -2,6 +2,7 @@
     require "conexion.php";
     $id = 0;
     $pelicula;
+    $peliculas = array();
     $result;
     $query;
 ?>
@@ -22,10 +23,18 @@
 
 <body>
 
+  <?php
+    $query = "SELECT * FROM peliculas";
+    $result = $conexion -> query($query);
+    while ($pelicula = $result -> fetch_assoc()) {
+        $peliculas[] = $pelicula;
+    } 
+  ?>
+
   <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo center">CRUDa</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="./index.php" class="brand-logo center">CRUDa</a>
       <ul class="left hide-on-med-and-down">
-        <li><a href="#">Catalogo</a></li>
+        <li><a href="./catalog.php">Catalogo</a></li>
         <li><a href="#">Genero</a></li>
       </ul>
 
@@ -41,7 +50,8 @@
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Catalogo</a></li>
+        <li><a href="./index.php">Inicio</a></li>
+        <li><a href="./catalog.php">Catalogo</a></li>
         <li><a href="#">Genero</a></li>
         <li><a href="#!">Iniciar Sesion</a></li>
         <li><a href="#!">Registrase</a></li>
@@ -88,34 +98,26 @@
     <?php endfor?>
   </div>
 
-  <?php
-    $query = "SELECT * FROM peliculas";
-    $result = $conexion -> query($query);
-    $peliculas = array();
-    while ($pelicula = $result -> fetch_assoc()) {
-        $peliculas[] = $pelicula;
-    } 
-  ?>
-
   <div>
     <table>
+      
       <th>
         <table>
-          <?php $i = 0; while ($i < sizeof($peliculas)):?>
+          <?php $i = 0; for ($y = 0;$y <= 5; $y++):?>
             <tr height="25%">
               <?php for ($v = 0;$v <= 4; $v++):?>
                 <?php if ($i < sizeof($peliculas)):?>
                   <th width="25%">
+                    <?php $pelicula = $peliculas[$i];?>
                     <figure>
-                      <?php $pelicula = $peliculas[$i];?>
                       <img src="assets/images/<?php echo  $pelicula['titulo'];?>-poster.jpg">
-                      <?php $i++;?>
                     </figure>
+                    <?php $i++;?>
                   </th>
                 <?php endif?>
               <?php endfor?>
             </tr>
-          <?php endwhile?>
+          <?php endfor?>
         </table>
       </th>
 
@@ -129,6 +131,7 @@
             underlying responsive system across all platforms allow for a more unified user experience.</p>
         </div>
       </th>
+
     </table>
   </div>
 
