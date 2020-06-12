@@ -39,7 +39,17 @@ VALUES
 '2020-03-13', 1),
 ('Sonic La Película (2019)', 'Accion y Aventura, Animación', 'Jeff Fowler', '1 h 40 min', 'Ingles',
 'Sonic, el descarado erizo azul basado en la famosa serie de videojuegos de Sega, vivirá aventuras y desventuras cuando conoce a su amigo humano y policía, Tom Wachowski (James Marsden).',
-'2020-02-14');
+'2020-02-14', 2),
+('Avengers: Endgame (2019)', 'Accion', 'Joe Russo y Anthony Russo', '3 h 2 min', 'Ingles', 
+'Tras los sucesos de "Vengadores: Infinity War", los superhéroes que sobrevivieron a Thanos se reunen para poner en práctica un plan definitivo que podría acabar con el villano definitivamente.',
+'2020-04-22', 3),
+('Guasón (2019)', 'Drama, Suspenso', 'Todd Phillips', '2 h 2 min', 'Ingles', 
+'Película centrada en el Joker, el archienemigo de Batman, que pondrá foco en cómo se convirtió en un villano y qué le llevó a ello. ', 
+'2019-10-04', 4),
+('Justice League Dark: Apokolips War (2020)', 'Animación', 'Matt Peters y Christina Sotta', '1 h 30 min', 'Ingles', 
+'Culminando seis años de una aventura que comenzó con el lanzamiento de Justice League: War en 2014, Justice League Dark: Apokolips War presenta un planeta Tierra totalmente devastado por el tirano intergaláctico Darkseid en el que los superhéroes apenas han podido hacer frente a la guerra.', 
+'2020-05-05', 5);
+
 
 --
 -- Create table structure for table `miembros`
