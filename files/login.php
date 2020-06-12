@@ -1,11 +1,6 @@
 <?php
     require "conexion.php";
-    mysqli_set_charset($conexion,'utf8');
-    $id = 0;
-    $pelicula;
-    $peliculas = array();
-    $result;
-    $query;
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -23,14 +18,6 @@
 </head>
 
 <body>
-
-  <?php
-    $query = "SELECT * FROM peliculas";
-    $result = $conexion -> query($query);
-    while ($pelicula = $result -> fetch_assoc()) {
-        $peliculas[] = $pelicula;
-    } 
-  ?>
 
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="./index.php" class="brand-logo center">CRUDa</a>
@@ -61,39 +48,31 @@
     </div>
   </nav>
 
-  <table>
-    <?php $i = 0; while ($i < sizeof($peliculas)):?>
-    <tr>
-      <?php for ($v = 0;$v <= 6; $v++):?>
-      <?php if ($i < sizeof($peliculas)):?>
-      <th>
-        <?php $pelicula = $peliculas[$i];?>
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="assets/images/<?php echo $pelicula['titulo'];?>-poster.jpg">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"><?php echo $pelicula['titulo'];?><i
-                class="material-icons right">more_vert</i></span>
-            <p><a href="#"><?php echo $pelicula['categoria'];?></a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4"><?php echo $pelicula['titulo'];?><i
-                class="material-icons right">close</i></span>
-            <p><?php echo $pelicula['resumen'];?></p>
-            <p>Dirigida por     : <?php echo $pelicula['director'];?></p>
-            <p>Duracion         : <?php echo $pelicula['duracion'];?></p>
-            <p>Idiomas          : <?php echo $pelicula['idioma'];?></p>
-            <p>Fecha de estreno : <?php echo $pelicula['fecha_estreno'];?></p>
-          </div>
+  <div class="row" style="margin-top:50px">
+    <div class="col s6 offset-s3">
+
+      <form action="./admin.php" method="POST">
+        <div class="form-group">
+          <label>Usuario</label>
+          <input type="text" placeholder="Nombre del Usuario" name="alias" require class="form-control"
+            id="exampleInputEmail1">
         </div>
-        <?php $i++;?>
-      </th>
-      <?php endif?>
-      <?php endfor?>
-    </tr>
-    <?php endwhile?>
-  </table>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">Contraseña</label>
+          <input type="password" placeholder="Contraseña" name="contraseña" require class="form-control"
+            id="exampleInputPassword1">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="background-color:black;color:white">Iniciar Sesion</button>
+        <button type="button" class="btn" style="background-color:black"> <a href="./registry.php">
+            <font color="white">Registrar</font>
+          </a></button>
+      </form>
+
+    </div>
+  </div>
+
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -103,6 +82,17 @@
     $(document).ready(function () {
       $(".dropdown-trigger").dropdown();
     });
+  </script>
+  <script> function valida(e) {
+      tecla = (document.all) ? e.keyCode : e.which;
+      if (tecla == 8) {
+        return true;
+      }
+
+      patron = /[0-9]/;
+      tecla_final = String.fromCharCode(tecla);
+      return patron.test(tecla_final);
+    }
   </script>
 
 </body>

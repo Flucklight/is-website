@@ -5,9 +5,8 @@
     $buscarUsuario = "SELECT * FROM miembros WHERE alias = '$_POST[alias]'";
 
     $result = $conexion -> query($buscarUsuario);
-    $count = mysqli_num_rows($result);
 
-    if ($count == 1 ) {
+    if (mysqli_num_rows($result) == 1 ) {
         echo '<p class="alert>El nombre de usuario ya fue utilizado!>';
         header('Location: ./registry.php');
     } else {

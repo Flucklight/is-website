@@ -1,5 +1,6 @@
 <?php
     require "conexion.php";
+    mysqli_set_charset($conexion,'utf8');
     $id = 0;
     $pelicula;
     $peliculas = array();
@@ -8,7 +9,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-MX">
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -39,8 +40,8 @@
       </ul>
 
       <ul id="dropdown-menu" class="dropdown-content">
-        <li><a href="#!">Iniciar Sesion</a></li>
-        <li><a href="./registry.php">Registrase</a></li>
+        <li><a href="./login.php">Iniciar Sesion</a></li>
+        <li><a href="./create.php">Registrase</a></li>
       </ul>
 
       <ul class="right hide-on-med-and-down">
@@ -53,8 +54,8 @@
         <li><a href="./index.php">Inicio</a></li>
         <li><a href="./catalog.php">Catalogo</a></li>
         <li><a href="#">Genero</a></li>
-        <li><a href="#!">Iniciar Sesion</a></li>
-        <li><a href="./registry.php">Registrase</a></li>
+        <li><a href="./login.php">Iniciar Sesion</a></li>
+        <li><a href="./create.php">Registrase</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
