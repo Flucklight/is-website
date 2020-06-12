@@ -36,7 +36,10 @@ VALUES
 '2020-01-17', 0),
 ('Bloodshot', 'Accion', 'Dave Wilson', '1 h 49 min', 'Ingles', 
 'Ray Garrison (Vin Diesel), también conocido como Bloodshot, es resucitado por la compañía Rising Spirit Technologies a través del uso de nanotecnología. Mientras lucha por recuperar la memoria, Ray trata de volver al ser el que era antes de sufrir el accidente que dejaría amnésico. Película basada en el cómic "Valiant", creado por Kevin VanHook, Don Perlin y Bob Layton.',
-'2020-03-13', 1);
+'2020-03-13', 1),
+('Sonic La Película (2019)', 'Accion y Aventura, Animación', 'Jeff Fowler', '1 h 40 min', 'Ingles',
+'Sonic, el descarado erizo azul basado en la famosa serie de videojuegos de Sega, vivirá aventuras y desventuras cuando conoce a su amigo humano y policía, Tom Wachowski (James Marsden).',
+'2020-02-14');
 
 --
 -- Create table structure for table `miembros`
