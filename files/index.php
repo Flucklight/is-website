@@ -1,7 +1,7 @@
 <?php
     require "conexion.php";
     mysqli_set_charset($conexion,'utf8');
-    $id = 0;
+    $id = 1;
     $pelicula;
     $peliculas = array();
     $result;
@@ -91,33 +91,34 @@
   </div>
 
   <div class="carousel">
-    <?php for ($id = 0;$id <= 5; $id++):?>
+    <?php for ($id = 1;$id <= 5; $id++):?>
     <?php   $query = "SELECT * FROM peliculas WHERE id = '$id'";
             $result = $conexion -> query($query);
             $pelicula = $result -> fetch_assoc();?>
-            <a class="carousel-item" href="<?echo $id;?>"><img src="assets/images/<?php echo $pelicula['titulo'];?>-poster.jpg"></a>
+    <a class="carousel-item" href="<?echo $id;?>"><img
+        src="assets/images/<?php echo $pelicula['titulo'];?>-poster.jpg"></a>
     <?php endfor?>
   </div>
 
   <div>
     <table>
-      
+
       <th>
         <table>
-          <?php $i = 0; for ($y = 0;$y <= 5; $y++):?>
-            <tr height="25%">
-              <?php for ($v = 0;$v <= 4; $v++):?>
-                <?php if ($i < sizeof($peliculas)):?>
-                  <th width="25%">
-                    <?php $pelicula = $peliculas[$i];?>
-                    <figure>
-                      <img src="assets/images/<?php echo  $pelicula['titulo'];?>-poster.jpg">
-                    </figure>
-                    <?php $i++;?>
-                  </th>
-                <?php endif?>
-              <?php endfor?>
-            </tr>
+          <?php $i = 0; for ($y = 0;$y <= 3; $y++):?>
+          <tr height="35%">
+            <?php for ($v = 0;$v <= 2; $v++):?>
+            <?php if ($i < sizeof($peliculas)):?>
+            <th width="35%">
+              <?php $pelicula = $peliculas[$i];?>
+              <figure>
+                <img src="assets/images/<?php echo  $pelicula['titulo'];?>-poster.jpg">
+              </figure>
+              <?php $i++;?>
+            </th>
+            <?php endif?>
+            <?php endfor?>
+          </tr>
           <?php endfor?>
         </table>
       </th>

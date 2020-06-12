@@ -63,35 +63,35 @@
 
   <table>
     <?php $i = 0; while ($i < sizeof($peliculas)):?>
-    <tr>
-      <?php for ($v = 0;$v <= 6; $v++):?>
-      <?php if ($i < sizeof($peliculas)):?>
-      <th>
-        <?php $pelicula = $peliculas[$i];?>
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="assets/images/<?php echo $pelicula['titulo'];?>-poster.jpg">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4"><?php echo $pelicula['titulo'];?><i
-                class="material-icons right">more_vert</i></span>
-            <p><a href="#"><?php echo $pelicula['categoria'];?></a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4"><?php echo $pelicula['titulo'];?><i
-                class="material-icons right">close</i></span>
-            <p><?php echo $pelicula['resumen'];?></p>
-            <p>Dirigida por     : <?php echo $pelicula['director'];?></p>
-            <p>Duracion         : <?php echo $pelicula['duracion'];?></p>
-            <p>Idiomas          : <?php echo $pelicula['idioma'];?></p>
-            <p>Fecha de estreno : <?php echo $pelicula['fecha_estreno'];?></p>
-          </div>
-        </div>
-        <?php $i++;?>
-      </th>
-      <?php endif?>
-      <?php endfor?>
-    </tr>
+        <tr height="20%">
+          <?php for ($v = 0;$v <= 3; $v++):?>
+            <?php if ($i < sizeof($peliculas)):?>
+                <th width="25%">
+                    <?php $pelicula = $peliculas[$i];?>
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="assets/images/<?php echo $pelicula['titulo'];?>-poster.jpg">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4"><?php echo $pelicula['titulo'];?><i
+                                class="material-icons right">more_vert</i></span>
+                            <p><a href="#"><?php echo $pelicula['categoria'];?></a></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><?php echo $pelicula['titulo'];?><i
+                                class="material-icons right">close</i></span>
+                            <p><?php echo $pelicula['resumen'];?></p>
+                            <p>Dirigida por     : <?php echo $pelicula['director'];?></p>
+                            <p>Duracion         : <?php echo $pelicula['duracion'];?></p>
+                            <p>Idiomas          : <?php echo $pelicula['idioma'];?></p>
+                            <p>Fecha de estreno : <?php echo $pelicula['fecha_estreno'];?></p>
+                        </div>
+                    </div>
+                    <?php $i++;?>
+                </th>
+            <?php endif?>
+          <?php endfor?>
+        </tr>
     <?php endwhile?>
   </table>
 

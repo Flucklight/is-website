@@ -50,8 +50,7 @@
       $_SESSION['correo']     = $usuario['correo'];
       $_SESSION['contraseña'] = $usuario['contraseña'];
       $_SESSION['permiso']    = $usuario['permiso'];
-      $_SESSION['id']         = $usuario['id'];?>
-      
+      $_SESSION['id']         = $usuario['id'];?>      
       <?php if ($_SESSION['permiso'] == 1):?>   
         <?php
             $query = "SELECT * FROM peliculas";
@@ -85,7 +84,7 @@
             endif?>
         </table>
         <br><br>
-        <a style="right:inherit" class="waves-effect waves-light btn" href="./create.php">Agregar Pelicula</a>
+        <a style="right:inherit" class="waves-effect waves-light btn" href="./">Agregar Pelicula</a>
         <a style="right:inherit" class="waves-effect waves-light btn" href="./session_destroy.php">Salir</a>
       <?php else:?>
         <?php
@@ -123,9 +122,9 @@
         </table>
         
         <br><br>
-        <a style="right:inherit" class="waves-effect waves-light btn" href="./create.php">Agregar Pelicula</a>
-        <a style="right:inherit" class="waves-effect waves-light btn" href="./update.php">Actualizar Pelicula</a>
-        <a style="right:inherit" class="waves-effect waves-light btn" href="./erase.php">Eliminar Pelicula</a>
+        <a style="right:inherit" class="waves-effect waves-light btn" href="./">Agregar Pelicula</a>
+        <a style="right:inherit" class="waves-effect waves-light btn" href="./">Actualizar Pelicula</a>
+        <a style="right:inherit" class="waves-effect waves-light btn" href="./">Eliminar Pelicula</a>
         <br><br>
         
         <?php
@@ -160,7 +159,7 @@
         <br><br>
         <a style="right:inherit" class="waves-effect waves-light btn" href="./create.php">Agregar Usuario</a>
         <a style="right:inherit" class="waves-effect waves-light btn" href="./update.php">Actualizar Usuario</a>
-        <a style="right:inherit" class="waves-effect waves-light btn" href="./erase.php">Eliminar Usuario</a>
+        <a style="right:inherit" class="waves-effect waves-light btn" href="./delete.php">Eliminar Usuario</a>
         <br><br>
         <a style="right:inherit" class="waves-effect waves-light btn" href="./session_destroy.php">Salir</a>
         <br><br>
