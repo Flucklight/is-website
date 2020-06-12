@@ -54,7 +54,13 @@ VALUES
 '2016-03-24', 6),
 ('¡Huye! (2017)', 'Horror', 'Jordan Peele', '1 h 43 min', 'Ingles',
 'El actor y comediante Jordan Peele debuta como director con la película Get Out, una cinta de horror que se centra en la visita que un joven afromericano hará a la familia caucásica de su novia. Sin embargo, no todo es lo que parece y su estadía tomará un giro siniestro.',
-'2017-05-26', 7);
+'2017-05-26', 7),
+('Capitán América Civil War (2016)', 'Accion', 'Anthony Russo y Joe Russo', '2 h 23 min', 'Ingles',
+'Capitán América: Guerra Civil continúa la historia de Steve Rogers, líder del recién formado equipo de Vengadores, en sus continuos esfuerzos para salvaguardar la humanidad.',
+'20160-04-29', 8),
+('La Forma Del Agua (2017)', 'Ciencia ficcion, Romance', 'Guillermo del Toro', '1 h 59 min', 'Ingles',
+'Estados Unidos, 1963. Plena Guerra Fría. Ciertas instalaciones de gobierno albergan laboratorios secretos de alta seguridad, en los que científicos llevan a cabo diversas pruebas y experimentos sobre un extraño hombre pez (Doug Jones).',
+'2018-01-12', 9);
 
 
 
