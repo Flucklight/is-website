@@ -57,10 +57,13 @@ VALUES
 '2017-05-26', 7),
 ('Capitán América Civil War (2016)', 'Accion', 'Anthony Russo y Joe Russo', '2 h 23 min', 'Ingles',
 'Capitán América: Guerra Civil continúa la historia de Steve Rogers, líder del recién formado equipo de Vengadores, en sus continuos esfuerzos para salvaguardar la humanidad.',
-'20160-04-29', 8),
+'2016-04-29', 8),
 ('La Forma Del Agua (2017)', 'Ciencia ficcion, Romance', 'Guillermo del Toro', '1 h 59 min', 'Ingles',
 'Estados Unidos, 1963. Plena Guerra Fría. Ciertas instalaciones de gobierno albergan laboratorios secretos de alta seguridad, en los que científicos llevan a cabo diversas pruebas y experimentos sobre un extraño hombre pez (Doug Jones).',
-'2018-01-12', 9);
+'2018-01-12', 9),
+('It (Eso) (2017)', 'Horror', 'Andrés Muschietti', '2 h 15 min', 'Ingles', 
+'New Line Cinema presenta IT, una película de horror y suspenso basada en la popular novela homónima de Stephen King, que ha logrado aterrorizar a sus lectores por décadas.',
+'2017-09-14',11);
 
 
 
