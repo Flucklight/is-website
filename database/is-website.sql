@@ -66,7 +66,10 @@ VALUES
 '2017-09-14',11),
 ('Onward (2020)', 'Animación, Aventura', 'Dan Scanlon', '1 h 03 min', 'Ingles',
 'Ambientado en un mundo de fantasía suburbana, dos hermanos elfos adolescentes, Ian y Barley Lightfood, se embarcan en una aventura en la que se proponen descubrir si existe aún algo de magia en el mundo que les permita pasar un último día con su padre, que falleció cuando ellos eran aún muy pequeños como para poder recordarlo.',
-'2020-02-20', 10);
+'2020-02-20', 10),
+('Una Voz Silenciosa (2016)', 'Animación, Drama, Romance', 'Naoko Yamada', '2 h 9 min', 'Japones',
+'“Koe no Katachi” (Una Voz Silenciosa) es una conmovedora historia realizada por el estudio de animación Kyoto Animation y basada en el manga escrito por Yohitoki Oima sobre la amistad y la empatía, la cuál se desarrolla a través de Shouya, un chico con un pasado vergonzoso.',
+'2017-05-05', 12);
 
 
 
