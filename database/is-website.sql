@@ -63,7 +63,11 @@ VALUES
 '2018-01-12', 9),
 ('It (Eso) (2017)', 'Horror', 'Andrés Muschietti', '2 h 15 min', 'Ingles', 
 'New Line Cinema presenta IT, una película de horror y suspenso basada en la popular novela homónima de Stephen King, que ha logrado aterrorizar a sus lectores por décadas.',
-'2017-09-14',11);
+'2017-09-14',11),
+('Onward (2020)', 'Animación, Aventura', 'Dan Scanlon', '1 h 03 min', 'Ingles',
+'Ambientado en un mundo de fantasía suburbana, dos hermanos elfos adolescentes, Ian y Barley Lightfood, se embarcan en una aventura en la que se proponen descubrir si existe aún algo de magia en el mundo que les permita pasar un último día con su padre, que falleció cuando ellos eran aún muy pequeños como para poder recordarlo.',
+'2020-02-20', 10);
+
 
 
 
