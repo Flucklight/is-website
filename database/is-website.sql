@@ -69,7 +69,32 @@ VALUES
 '2020-02-20', 10),
 ('Una Voz Silenciosa (2016)', 'Animación, Drama, Romance', 'Naoko Yamada', '2 h 9 min', 'Japones',
 '“Koe no Katachi” (Una Voz Silenciosa) es una conmovedora historia realizada por el estudio de animación Kyoto Animation y basada en el manga escrito por Yohitoki Oima sobre la amistad y la empatía, la cuál se desarrolla a través de Shouya, un chico con un pasado vergonzoso.',
-'2017-05-05', 12);
+'2017-05-05', 12),
+('Toy Story 4 (2019)', 'Animación, comedia', 'Josh Cooley', '1 h 40 min', 'Inglés',
+'“Woody siempre ha tenido claro cuál es su labor en el mundo y cuál es su prioridad: cuidar a su dueño, ya sea Andy o Bonnie. Sin embargo, Woody descubrirá lo grande que puede ser el mundo para un juguete cuando Forky se convierta en su nuevo compañero de habitación. Los juguetes se embarcarán en una aventura de la que no se olvidarán jamás.',
+'2019-06-21', 13),
+('El hombre invisible (2020)', 'Terror, Suspenso', 'Leigh Whannell', '2 h 05 min', 'Inglés',
+'Después de que su abusivo ex novio se suicide, la ingenua viuda Cecilia comienza a reconstruir su vida para mejor. Sin embargo, su sentido de la realidad se pone en tela de juicio cuando comienza a sospechar que su ex novio en realidad no está muerto, como había pensado.',
+'2020-02-28', 14),
+('Maléfica, Dueña del mal (2019)', 'Fantasía, Aventura', 'Joachim Ronning', '1 h 58 min', 'Inglés',
+'Secuela de "Maléfica" que cuenta la vida de Maléfica y Aurora, así como las alianzas que formarán para sobrevivir a las amenazas del mágico mundo en el que habitan.',
+'2019-10-16', 15),
+('El Rey Leon (2019)', 'Animación, Familia', 'Jon Favreau', '1 h 58 min', 'Inglés',
+'Un remake del clásico animado de Disney de 1994 El rey león que estará dirigido por Jon Favreu. Simba (Donald Glover) es el hijo del rey de los leones, Mufasa, y heredero de todo el reino. Pero cuando su padre es brutalmente asesinado por su tío Scar, decidirá huir, dejando vía libre para que su tío tome el puesto de su padre como líder de la manada. En su camino, Simba se encuentra con el suricato Timón y el jabalí Pumba, que le enseñarán a vivir la vida sin preocupaciones. Pero el joven león se verá obligado a decidir entre su vida libre de problemas o su destino como rey .',
+'2019-07-09', 16),
+('Aquaman (2018)', 'Acción, Aventura', 'James Wan', '2 h 22 min', 'Inglés',
+'Arthur Curry, también conocido como Aquaman (Jason Momoa), es un habitante de un poderoso reino subacuático que recibe el nombre de la Atlántida. En esta película repleta de acción y aventura conoceremos sus orígenes, desde que era un niño criado por un hombre humano y considerado un paria por los suyos, hasta que crece y debe hacer frente a los problemas que han aparecido en su mundo. Entonces, este hombre mitad humano y mitad atlante, emprenderá el viaje de su vida, en el que tendrá que descubrir quién es realmente y si es digno de ser un rey. Acompañado de Mera (Amber Heard), hará frente a este y otros retos, mientras le planta cara a Black Manta (Yahya Abdul-Mateen II) y a su propio hermanastro Orm (Patrick Wilson). ¿Será capaz de dirigir a su pueblo y convertirse en un héroe para el mundo?.',
+'2018-12-13', 17),
+('Aves de presa (2020)', 'Acción', 'Cathy Yan', '1 h 49 min', 'Inglés',
+'Después de separarse de Joker, Harley Quinn y otras tres heroínas, Canario Negro, Cazadora y Renné Montoya, unen sus fuerzas para salvar a una niña del malvado rey del crímen, Máscara negra.',
+'2020-01-29', 18),
+('Terminator Destino Oculto (2019)', 'Acción, Ciencia Fincción', 'Tim Miller', '2 h 08 min', 'Inglés',
+'Un nuevo tipo de Terminator llega desde el futuro a la Ciudad de México para asesinar a una joven llamada Dani Ramos. Sin embargo, también viaja al presente desde el futuro Grace, un híbrido entre cyborg y humano que debe, con la ayuda de Sarah Connor, proteger a Ramos del aparentemente indestructible robot asesino.',
+'2019-10-23', 19),
+('Jumanji Siguiente Nivel (2019)', 'Acción, Comedia', 'Jake Kasdan', '2 h 03 min', 'Inglés',
+'En esta ocasión, los jugadores vuelven al juego, pero sus personajes se han intercambiado entre sí, lo que ofrece un curioso plantel: los mismos héroes con distinta apariencia. Pero, ¿dónde está el resto de la gente? Los participantes sólo tienen una opción: jugar una vez más a esta peligrosa partida para descubrir qué es realmente lo que está sucediendo.',
+'2019-12-12', 20);
+
 
 
 
