@@ -60,7 +60,11 @@ VALUES
 '20160-04-29', 8),
 ('La Forma Del Agua (2017)', 'Ciencia ficcion, Romance', 'Guillermo del Toro', '1 h 59 min', 'Ingles',
 'Estados Unidos, 1963. Plena Guerra Fría. Ciertas instalaciones de gobierno albergan laboratorios secretos de alta seguridad, en los que científicos llevan a cabo diversas pruebas y experimentos sobre un extraño hombre pez (Doug Jones).',
-'2018-01-12', 9);
+'2018-01-12', 9),
+('Onward (2020)', 'Animación, Aventura', 'Dan Scanlon', '1 h 03 min', 'Ingles',
+'Ambientado en un mundo de fantasía suburbana, dos hermanos elfos adolescentes, Ian y Barley Lightfood, se embarcan en una aventura en la que se proponen descubrir si existe aún algo de magia en el mundo que les permita pasar un último día con su padre, que falleció cuando ellos eran aún muy pequeños como para poder recordarlo.',
+'2020-02-20', 10);
+
 
 
 
