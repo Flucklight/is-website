@@ -41,7 +41,7 @@
 
       <ul id="dropdown-menu" class="dropdown-content">
         <li><a href="./login.php">Iniciar Sesion</a></li>
-        <li><a href="./create.php">Registrase</a></li>
+        <li><a href="./registry.php">Registrase</a></li>
       </ul>
 
       <ul class="right hide-on-med-and-down">
@@ -55,7 +55,7 @@
         <li><a href="./catalog.php">Catalogo</a></li>
         <li><a href="#">Genero</a></li>
         <li><a href="./login.php">Iniciar Sesion</a></li>
-        <li><a href="./create.php">Registrase</a></li>
+        <li><a href="./registry.php">Registrase</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>

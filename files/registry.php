@@ -1,5 +1,5 @@
 <?php
-    require "conexion.php";
+  require "conexion.php";
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="./index.php" class="brand-logo center">CRUDa</a>
       <ul class="left hide-on-med-and-down">
@@ -49,26 +48,31 @@
 
   <div class="row" style="margin-top:50px">
     <div class="col s6 offset-s3">
-
-      <form action="./admin.php" method="POST">
+      <form action="./submit.php" method="POST">
+        <hr />
         <div class="form-group">
-          <label>Usuario</label>
-          <input type="text" placeholder="Nombre del Usuario" name="alias" require class="form-control"
-            id="exampleInputEmail1">
+          <label for="nombre">Nombre Completo: </label><br>
+          <input type="text" name="nombre" maxlength="255" required>
+          <br /><br />
         </div>
-
         <div class="form-group">
-          <label for="exampleInputPassword1">Contraseña</label>
-          <input type="password" placeholder="Contraseña" name="contraseña" require class="form-control"
-            id="exampleInputPassword1">
+          <label for="correo">Email: </label><br>
+          <input type="email" name="correo" maxlength="35" required>
+          <br /><br />
         </div>
-
-        <button type="submit" class="btn btn-primary" style="background-color:black;color:white">Iniciar Sesion</button>
-        <button type="button" class="btn" style="background-color:black"> <a href="./registry.php">
-            <font color="white">Registrar</font>
-          </a></button>
+        <div class="form-group">
+          <label for="alias">Nombre Usuario: </label><br>
+          <input type="text" name="alias" maxlength="255" required>
+          <br /><br />
+        </div>
+        <div class="form-group">
+          <label for="contraseña">Password: </label><br>
+          <input type="password" name="contraseña" maxlength="8" required>
+        </div>        
+        <br /><br />
+        <input type="submit" name="submit" class="btn btn-primary" value="Registrarme">
+        <input type="reset" name="clear" class="btn btn-primary" value="Borrar">
       </form>
-
     </div>
   </div>
 
