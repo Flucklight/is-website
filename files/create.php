@@ -1,5 +1,6 @@
 <?php
   require "conexion.php";
+  mysqli_set_charset($conexion,'utf8');
   session_start();
 ?>
 
@@ -19,9 +20,9 @@
 
 <body>
     <nav class="light-blue lighten-1" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="./index.php" class="brand-logo center">CRUDa</a>
+        <div class="nav-wrapper container"><a id="logo-container" href="./session_destroy.php" class="brand-logo center">CRUDa</a>
             <ul id="nav-mobile" class="sidenav">
-                <li><a href="./index.php">Inicio</a></li>
+                <li><a href="./session_destroy.php">Inicio</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
@@ -30,7 +31,7 @@
     <?php if ($_GET["v"] == "m"):?>
     <div class="row" style="margin-top:50px">
         <div class="col s6 offset-s3">
-            <form action="./submit.php?v=m" method="POST">
+            <form action="./submit.php?v=cm" method="POST">
                 <hr />
                 <div class="form-group">
                     <label for="nombre">Nombre Completo: </label><br>
@@ -71,7 +72,7 @@
     <?php elseif ($_GET["v"] == "p"):?>
     <div class="row" style="margin-top:50px">
         <div class="col s6 offset-s3">
-            <form action="./submit.php?v=p" method="POST">
+            <form action="./submit.php?v=cp" method="POST">
                 <hr />
                 <div class="form-group">
                     <label for="titulo">Titulod de la Pelicula: </label><br>

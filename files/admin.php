@@ -24,9 +24,9 @@
 
 <body>
   <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="./session_destry.php" class="brand-logo center">CRUDa</a>
+    <div class="nav-wrapper container"><a id="logo-container" href="./session_destroy.php" class="brand-logo center">CRUDa</a>
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="./index.php">Inicio</a></li>
+        <li><a href="./session_destroy.php">Inicio</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -111,8 +111,8 @@
         </table>
         <br><br>
         <a style="right:inherit" class="waves-effect waves-light btn" href="./create.php?v=p">Agregar Pelicula</a>
-        <a style="right:inherit" class="waves-effect waves-light btn" href="./">Actualizar Pelicula</a>
-        <a style="right:inherit" class="waves-effect waves-light btn" href="./">Eliminar Pelicula</a>
+        <a style="right:inherit" class="waves-effect waves-light btn" href="./select_item.php?s=ap">Actualizar Pelicula</a>
+        <a style="right:inherit" class="waves-effect waves-light btn" href="./select_item.php?s=ep">Eliminar Pelicula</a>
         <br><br>
         
         <?php
@@ -146,8 +146,8 @@
         </table>
         <br><br>
         <a style="right:inherit" class="waves-effect waves-light btn" href="./create.php?v=m">Agregar Usuario</a>
-        <a style="right:inherit" class="waves-effect waves-light btn" href="./update.php">Actualizar Usuario</a>
-        <a style="right:inherit" class="waves-effect waves-light btn" href="./delete.php">Eliminar Usuario</a>
+        <a style="right:inherit" class="waves-effect waves-light btn" href="./select_item.php?s=am">Actualizar Usuario</a>
+        <a style="right:inherit" class="waves-effect waves-light btn" href="./select_item.php?s=em">Eliminar Usuario</a>
         <br><br>
         <a style="right:inherit" class="waves-effect waves-light btn" href="./session_destroy.php">Salir</a>
         <br><br>

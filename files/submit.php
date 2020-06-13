@@ -2,7 +2,7 @@
     include "conexion.php";
     mysqli_set_charset($conexion,'utf8');
 
-    if ($_GET["v"] == "m") {
+    if ($_GET["v"] == "cm") {
         $buscarUsuario = "SELECT * FROM miembros WHERE alias = '$_POST[alias]'";
         $result = $conexion -> query($buscarUsuario);
         if (mysqli_num_rows($result) == 1 ) {
@@ -25,7 +25,7 @@
             echo '<p class="alert>Usuario Creado Exitosamente!p>';
             header('Location: ./admin.php');
         }
-    } elseif ($_GET["v"] == "p") {
+    } elseif ($_GET["v"] == "cp") {
         $buscarPelicula = "SELECT * FROM peliculas WHERE titulo = '$_POST[titulo]'";
         $result = $conexion -> query($buscarPelicula);
         if (mysqli_num_rows($result) == 1 ) {
@@ -52,6 +52,32 @@
             echo '<p class="alert>Pelicula Ingresada Exitosamente!p>';
             header('Location: ./admin.php');
         }
+    } elseif ($_GET["v"] == "um") {
+        $id = $_GET["id"];
+        $query = "UPDATE miembros SET 
+                  nombre        = '$_POST[nombre]', 
+                  correo        = '$_POST[correo]', 
+                  alias         = '$_POST[alias]', 
+                  contraseña    = '$_POST[contraseña]', 
+                  permiso       = '$_POST[permiso]'
+                  WHERE id = '$id'";
+        mysqli_query($conexion, $query);
+        echo '<p class="alert>Usuario Actualizado Exitosamente!p>';
+        header('Location: ./admin.php');
+    } elseif ($_GET["v"] == "up") {
+        $id = $_GET["id"];
+        $query = "UPDATE peliculas SET 
+                  titulo        = '$_POST[titulo]', 
+                  categoria     = '$_POST[categoria]', 
+                  director      = '$_POST[director]', 
+                  duracion      = '$_POST[duracion]', 
+                  idioma        = '$_POST[idioma]', 
+                  resumen       = '$_POST[resumen]',
+                  fecha_estreno = '$_POST[fecha_estreno]'
+                  WHERE id = '$id'";
+        mysqli_query($conexion, $query);
+        echo '<p class="alert>Pelicula Actualizada Exitosamente!p>';
+        header('Location: ./admin.php');
     } else {
         $buscarUsuario = "SELECT * FROM miembros WHERE alias = '$_POST[alias]'";
         $result = $conexion -> query($buscarUsuario);

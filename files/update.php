@@ -1,5 +1,12 @@
 <?php
   require "conexion.php";
+  mysqli_set_charset($conexion,'utf8');
+  session_start();
+  $id = $_GET["id"];
+  $query;
+  $result;
+  $pelicula;
+  $miembro;
 ?>
 
 <!DOCTYPE html>
@@ -18,64 +25,122 @@
 
 <body>
   <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="./index.php" class="brand-logo center">CRUDa</a>
-      <ul class="left hide-on-med-and-down">
-        <li><a href="./catalog.php">Catalogo</a></li>
-        <li><a href="#">Genero</a></li>
-      </ul>
-
-      <ul id="dropdown-menu" class="dropdown-content">
-        <li><a href="./login.php">Iniciar Sesion</a></li>
-        <li><a href="./registry.php">Registrase</a></li>
-      </ul>
-
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#"><i class="material-icons">search</i></a></li>
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown-menu">Menu<i
-              class="material-icons right">arrow_drop_down</i></a></li>
-      </ul>
-
+    <div class="nav-wrapper container"><a id="logo-container" href="./session_destroy.php" class="brand-logo center">CRUDa</a>
       <ul id="nav-mobile" class="sidenav">
         <li><a href="./index.php">Inicio</a></li>
-        <li><a href="./catalog.php">Catalogo</a></li>
-        <li><a href="#">Genero</a></li>
-        <li><a href="./login.php">Iniciar Sesion</a></li>
-        <li><a href="./registry.php">Registrase</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 
-  <div class="row" style="margin-top:50px">
-    <div class="col s6 offset-s3">
-      <form action="./submit.php" method="POST">
-        <hr />
-        <div class="form-group">
-          <label for="nombre">Nombre Completo: </label><br>
-          <input type="text" name="nombre" maxlength="255" required>
-          <br /><br />
+  <?php if ($_GET["u"] == "m"):?>
+    <?php
+      $query = "SELECT * FROM miembros WHERE id = '$id'";
+      $result = $conexion -> query($query);
+      $miembro = $result -> fetch_assoc();
+    ?>
+    <div class="row" style="margin-top:50px">
+        <div class="col s6 offset-s3">
+            <form action="./submit.php?v=um&id=<?php echo $id?>" method="POST">
+                <hr />
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo: </label><br>
+                    <input type="text" value="<?php echo $miembro['nombre']?>" name="nombre" maxlength="255" required>
+                    <br /><br />
+                </div>
+                <div class="form-group">
+                    <label for="correo">Email: </label><br>
+                    <input type="email" value="<?php echo $miembro['correo']?>" name="correo" maxlength="35" required>
+                    <br /><br />
+                </div>
+                <div class="form-group">
+                    <label for="alias">Nombre Usuario: </label><br>
+                    <input type="text" value="<?php echo $miembro['alias']?>" name="alias" maxlength="255" required>
+                    <br /><br />
+                </div>
+                <div class="form-group">
+                    <label for="contraseña">Password: </label><br>
+                    <input type="password" value="<?php echo $miembro['contraseña']?>" name="contraseña" maxlength="8" required>
+                    <br /><br />
+                </div>
+                <div class="form-group">
+                    <label for="permiso">Nivel de Permiso</label>
+                    <select name="permiso" required>
+                        <option value="" disabled selected>selecciona un nivel de permiso</option>
+                        <option value="1">Miembro</option>
+                        <option value="2">Administrador</option>
+                    </select>
+                    <br /><br />
+                </div>
+                <input type="submit" name="submit" class="btn btn-primary" value="Actualizar">
+                <input type="reset" name="clear" class="btn btn-primary" value="Borrar">
+            </form>
+            <br><br>
+            <a style="right:inherit" class="waves-effect waves-light btn" href="./admin.php">Regresar</a>
         </div>
-        <div class="form-group">
-          <label for="correo">Email: </label><br>
-          <input type="email" name="correo" maxlength="35" required>
-          <br /><br />
-        </div>
-        <div class="form-group">
-          <label for="nombre">Nombre Usuario: </label><br>
-          <input type="text" name="alias" maxlength="255" required>
-          <br /><br />
-        </div>
-        <div class="form-group">
-          <label for="pass">Password: </label><br>
-          <input type="password" name="contraseña" maxlength="8" required>
-        </div>        
-        <br /><br />
-        <input type="submit" name="submit" class="btn btn-primary" value="Registrarme">
-        <input type="reset" name="clear" class="btn btn-primary" value="Borrar">
-      </form>
     </div>
-  </div>
-
+  <?php elseif ($_GET["u"] == "p"):?>
+    <?php
+      $query = "SELECT * FROM peliculas WHERE id = '$id'";
+      $result = $conexion -> query($query);
+      $pelicula = $result -> fetch_assoc();
+    ?>
+    <div class="row" style="margin-top:50px">
+        <div class="col s6 offset-s3">
+            <form action="./submit.php?v=up&id=<?php echo $id?>" method="POST">
+                <hr />
+                <div class="form-group">
+                    <label for="titulo">Titulod de la Pelicula: </label><br>
+                    <input type="text" value="<?php echo $pelicula['titulo']?>" name="titulo" maxlength="255" required>
+                    <br /><br />
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <select name="categoria" required>
+                        <option value="" disabled selected>selecciona una categoria</option>
+                        <option value="Accion">Accion</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Animada">Animada</option>
+                    </select>
+                    <br /><br />
+                </div>
+                <div class="form-group">
+                    <label for="director">Directores: </label><br>
+                    <input type="text" value="<?php echo $pelicula['director']?>" name="director" maxlength="255" required>
+                    <br /><br />
+                </div>
+                <div class="form-group">
+                    <label for="duracion">Duracion: </label><br>
+                    <input type="text" value="<?php echo $pelicula['duracion']?>" name="duracion" maxlength="8" required>
+                    <br /><br />
+                </div>
+                <div class="form-group">
+                    <label>Idioma</label>
+                    <select name="idioma" required>
+                        <option value="" disabled selected>selecciona un idioma</option>
+                        <option value="Ingles">Ingles</option>
+                        <option value="Español">Español</option>
+                        <option value="Japones">Japones</option>
+                    </select>
+                    <br /><br />
+                </div>
+                <div class="form-group">
+                    <label for="resumen">Resumen: </label><br>
+                    <input type="text" value="<?php echo $pelicula['resumen']?>" name="resumen" required>
+                    <br /><br />
+                </div>
+                <div class="form-group">
+                    <lable for="fecha_estreno">Fecha de Estreno</label><br>
+                    <input type="text" value="<?php echo $pelicula['fecha_estreno']?>" class="datepicker" name="fecha_estreno" required>
+                </div>
+                <input type="submit" name="submit" class="btn btn-primary" value="Actualizar">
+                <input type="reset" name="clear" class="btn btn-primary" value="Borrar">
+            </form>
+            <br><br>
+            <a style="right:inherit" class="waves-effect waves-light btn" href="./login.php">Regresar</a>
+        </div>
+    </div>
+  <?php endif;?>
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -84,6 +149,10 @@
   <script type="text/javascript">
     $(document).ready(function () {
       $(".dropdown-trigger").dropdown();
+      $('select').formSelect();
+      $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd'
+      });
     });
   </script>
   <script> function valida(e) {
