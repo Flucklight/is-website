@@ -1,5 +1,6 @@
 <?php
   require "conexion.php";
+  session_start();
   mysqli_set_charset($conexion,'utf8');
   $peliculas = array();
   $miembros = array();
@@ -77,7 +78,7 @@
     <div class="collection">
         <?php for($i = 0; $i < sizeof($peliculas); $i++):?>
             <?php $pelicula = $peliculas[$i];?>
-            <a href="./delete.php?d=p&id=<?php echo $pelicula['id'];?>" class="collection-item"><?php echo $pelicula['titulo'];?></a>
+            <a href="./submit.php?v=dp&id=<?php echo $pelicula['id'];?>" class="collection-item"><?php echo $pelicula['titulo'];?></a>
         <?php endfor;?>
     </div>
 
@@ -93,7 +94,7 @@
     <div class="collection">
         <?php for($i = 0; $i < sizeof($miembros); $i++):?>
             <?php $miembro = $miembros[$i];?>
-            <a href="./delete.php?d=m&id=<?php echo $miembro['id'];?>" class="collection-item"><?php echo $miembro['nombre'];?></a>
+            <a href="./submit.php?v=dm&id=<?php echo $miembro['id'];?>" class="collection-item"><?php echo $miembro['nombre'];?></a>
         <?php endfor;?>
     </div>
     

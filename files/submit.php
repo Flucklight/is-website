@@ -78,6 +78,18 @@
         mysqli_query($conexion, $query);
         echo '<p class="alert>Pelicula Actualizada Exitosamente!p>';
         header('Location: ./admin.php');
+    } elseif ($_GET["v"] == "dm") {
+        $id = $_GET["id"];
+        $query = "DELETE FROM miembros WHERE id = '$id'";
+        mysqli_query($conexion, $query);
+        echo '<p class="alert>Usuario Eliminado Exitosamente!p>';
+        header('Location: ./admin.php');
+    } elseif ($_GET["v"] == "dp") {
+        $id = $_GET["id"];
+        $query = "DELETE FROM peliculas WHERE id = '$id'";
+        mysqli_query($conexion, $query);
+        echo '<p class="alert>Pelicula Eliminado Exitosamente!p>';
+        header('Location: ./admin.php');
     } else {
         $buscarUsuario = "SELECT * FROM miembros WHERE alias = '$_POST[alias]'";
         $result = $conexion -> query($buscarUsuario);
